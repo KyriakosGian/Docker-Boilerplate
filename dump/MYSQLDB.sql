@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.0
+-- version 4.9.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jan 04, 2020 at 09:03 PM
+-- Generation Time: Jan 18, 2020 at 12:10 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.1
 
@@ -40,10 +40,7 @@ CREATE TABLE `Users` (
 INSERT INTO `Users` (`id`, `name`) VALUES
 (1, 'User1'),
 (2, 'User2'),
-(3, 'User3'),
-(4, 'User4'),
-(5, 'User5'),
-(6, 'User6');
+(3, 'User3');
 
 --
 -- Indexes for dumped tables
@@ -55,9 +52,18 @@ INSERT INTO `Users` (`id`, `name`) VALUES
 ALTER TABLE `Users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Users`
+--
+ALTER TABLE `Users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

@@ -11,39 +11,71 @@
 <body>
     <div class="container">
 
-    <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="docker.svg" width="30" height="30" class="d-inline-block align-top" alt="" style="float: left;">
-        SWDBD
-    </a>
-    </nav>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="docker.svg" width="30" height="30" class="d-inline-block align-top" alt="" style="float: left;">
+                SWDBD
+            </a>
+        </nav>
 
-    <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a Simple Boilerplate Web Development Environment with Docker.</p>
-        <hr class="my-4">
-        <p>It uses Apache with php 7.4 version, mysql 8.0 version and phpmyadmin.</p>
-    </div>
-    
-    <?php
+        <div class="jumbotron">
+            <h1 class="display-4">Hello, world!</h1>
+            <p class="lead">This is a Simple Boilerplate Web Development Environment with Docker.</p>
+            <hr class="my-4">
+            <p>It uses Apache with php 7.4 version, mysql 8.0 version and phpmyadmin.</p>
+        </div>
 
-    $dbhost = 'db';
-    $dbname='MYSQLDB';
-    $dbuser = 'DBUser';
-    $dbpass = 'DBPassWord';
-    $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="exampleInputName">Add a new name</label>
+                <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="Name">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+        <?php
+            $dbhost = 'db';
+            $dbname='MYSQLDB';
+            $dbuser = 'DBUser';
+            $dbpass = 'DBPassWord';
 
-    $sql = 'SELECT * From Users';
+            try {
+                $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+                }
+                catch(PDOException $e)
+                {
+                    echo $e->getMessage();
+                }
+            
+            if(isset($_POST["name"])){
+                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+                $sql = "INSERT INTO Users (name) VALUES ('".$_POST["name"]."')";
+                if ($dbh->query($sql)) {
+                    ?>
+                        <div class="alert alert-success" role="alert">
+                            New Record Inserted Successfully !
+                        </div>
+                    <?php
+                }
+                else{
+                    ?>
+                        <div class="alert alert-danger" role="alert">
+                        Data not successfully Inserted.
+                        </div>
+                    <?php
+                }
+            }
 
-    echo "<ul class='list-group'>";
+            $sql = 'SELECT * From Users';
 
-    foreach ($dbh->query($sql) as $row) {
-        echo "<li class='list-group-item'>" . $row['id'] . " " . $row['name']  . "</li>";
-    }
-    echo "</ul>";
+            echo "<ul class='list-group'>";
+            foreach ($dbh->query($sql) as $row) {
+                echo "<li class='list-group-item'>" . $row['id'] . " " . $row['name']  . "</li>";
+            }
+            echo "</ul>";
 
-    echo phpinfo();
-    ?>
+            echo phpinfo();
+        ?>
 
     </div>
 
