@@ -1,0 +1,65 @@
+version: "3.7"
+
+services:
+    server:
+        build: 
+            context: ./
+            dockerfile: Apache.Dockerfile
+        container_name: server
+        restart: always
+        depends_on:
+            - db
+        ports: 
+            - 80:80 
+        networks:
+            - frontend
+            - backend
+        volumes:
+            - type: bind
+              source: ./www
+              target: /var/www/html
+              consistency: consistent # delegated or cached 
+            - type: bind
+              source: ./php.ini
+              target: /usr/local/etc/php/conf.d/999-customphp.ini
+              consistency: consistent # delegated or cached
+            #- ./php.ini:/usr/local/etc/php/conf.d/999-customphp.ini    #In one line
+    db:
+        image: mysql:8.0
+        container_name: db
+        restart: always
+        ports: 
+            - 3306:3306
+        networks:
+            - backend
+        volumes:
+            - ./dump:/docker-entrypoint-initdb.d    #Firsth time load default settings to MySql table.
+            #- ./sql:/var/lib/mysql  #Mount sql folder with database files. Don't Change anything inside this folder.
+            - projectVolume:/var/lib/mysql #Mount volume for db files
+        environment:
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        restart: always
+        depends_on:
+            - db
+        ports:
+            - 8000:80
+        networks:
+            - frontend
+            - backend
+        environment:
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+networks:
+    frontend:
+        name: FNetwork
+    backend:
+        name: BNetwork
+volumes:
+    projectVolume:
