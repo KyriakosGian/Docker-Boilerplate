@@ -18,6 +18,9 @@
         > https://code.visualstudio.com/
         
         >https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
+1. That's all folks !
+    1. Open your brower on http://localhost/ for server
+    1. Or open your brower on http://localhost:8000/ for phpMyAdmin.
 ---
 ## Components
 
