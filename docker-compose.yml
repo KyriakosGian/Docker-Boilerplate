@@ -2,15 +2,15 @@ version: "3.7"
 
 services:
     server:
-        build: 
+        build:
             context: ./
             dockerfile: Apache.Dockerfile
         container_name: server
         restart: always
         depends_on:
             - db
-        ports: 
-            - 80:80 
+        ports:
+            - 8080:80
         networks:
             - frontend
             - backend
@@ -18,23 +18,23 @@ services:
             - type: bind
               source: ./www
               target: /var/www/html
-              consistency: consistent # delegated or cached 
+              consistency: consistent # delegated or cached
             - type: bind
               source: ./php.ini
               target: /usr/local/etc/php/conf.d/999-customphp.ini
               consistency: consistent # delegated or cached
-            #- ./php.ini:/usr/local/etc/php/conf.d/999-customphp.ini    #In one line
+            #- ./php.ini:/usr/local/etc/php/conf.d/999-customphp.ini #In one line
     db:
         image: mysql:8.0
         container_name: db
         restart: always
-        ports: 
+        ports:
             - 3306:3306
         networks:
             - backend
         volumes:
-            - ./dump:/docker-entrypoint-initdb.d    #Firsth time load default settings to MySql table.
-            #- ./sql:/var/lib/mysql  #Mount sql folder with database files. Don't Change anything inside this folder.
+            - ./dump:/docker-entrypoint-initdb.d #Firsth time load default settings to MySql table.
+            #- ./sql:/var/lib/mysql #Mount sql folder with database files. Don't Change anything inside this folder.
             - projectVolume:/var/lib/mysql #Mount volume for db files
         environment:
             MYSQL_DATABASE: ${MYSQL_DATABASE}
