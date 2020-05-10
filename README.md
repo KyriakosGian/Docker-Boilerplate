@@ -5,10 +5,10 @@
 1. You must have Docker installed on your pc before you start.
    https://www.docker.com/products/docker-desktop
 1. Copy all files to your project folder.
-    > Download ZIP from https://github.com/KyriakosG78/SimpleWDEwDocker
+    > Download ZIP from https://github.com/KyriakosG78/Boilerplate-Docker
                                              
     > OR run git clone in console
-    >>`git clone https://github.com/KyriakosG78/SimpleWDEwDocker.git`                                                                                                                                                            
+    >>`git clone https://github.com/KyriakosG78/Boilerplate-Docker.git`                                                                                                                                                            
 
 1. Change settings in {.env} file with your preferences.
 1. Run Docker compose command for docker-compose.yml
@@ -19,8 +19,8 @@
         
         >https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
 1. That's all folks !
-    1. Open your brower on http://localhost/ for server
-    1. Or open your brower on http://localhost:8000/ for phpMyAdmin.
+    1. Open your browser on http://localhost/ for server
+    1. Or open your browser on http://localhost:8000/ for phpMyAdmin.
 ---
 ## Components
 
