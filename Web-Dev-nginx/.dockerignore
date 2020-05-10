@@ -1,0 +1,6 @@
+*.md
+.git*
+bin/*
+www/*
+sql/*
+tmp/*
