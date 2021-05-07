@@ -1,12 +1,11 @@
 <html>
  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
- 
- <title>Hello containers</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> 
+    
+    <title>Hello word</title>
 </head>
 <body>
     <div class="container">
@@ -14,20 +13,19 @@
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="/">
                 <img src="docker.svg" width="30" height="30" class="d-inline-block align-top" alt="" style="float: left;">
-                SWDBD
+                Boilerplate-Docker
             </a>
         </nav>
 
         <div class="jumbotron">
             <h1 class="display-4">Hello, world!</h1>
             <p class="lead">This is a Simple Boilerplate Web Development Environment with Docker.</p>
-            <hr class="my-4">
-            <p>It uses Apache with php 7.4 version, mysql 8.0 version and phpmyadmin.</p>
-        </div>
+            <p>It uses Apache with php 7.4 version, mysql 8.0 version and phpmyadmin. More on <a target="_blank" href="https://github.com/KyriakosG78/Boilerplate-Docker">github</p>
+        </a></div>
 
         <form action="" method="post">
             <div class="form-group">
-                <label for="exampleInputName">Add a new name</label>
+                <label for="exampleInputName">Test it ! Add a new name.</label>
                 <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="Name">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -79,8 +77,6 @@
 
     </div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 </body>
 </html>
