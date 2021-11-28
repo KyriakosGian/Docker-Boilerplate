@@ -5,6 +5,7 @@ Simple Boilerplate Web Development Environment with Docker
 ------------------------
 - Add a folder for Server service files
 - Update PHP version to 8.1.0RC6
+- Fix test index.php file
 
 1.0.2 - 2021-05-21
 ------------------------
