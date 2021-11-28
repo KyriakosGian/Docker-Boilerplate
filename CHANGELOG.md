@@ -1,6 +1,11 @@
 Simple Boilerplate Web Development Environment with Docker
 ==================================
 
+1.0.3 - 2021-11-28
+------------------------
+- Add a folder for Server service files
+- Update PHP version to 8.1.0RC6
+
 1.0.2 - 2021-05-21
 ------------------------
 - Small Fixes - updates

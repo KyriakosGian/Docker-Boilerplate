@@ -26,7 +26,7 @@
 
 ### Web Server with PHP
 
-- Apache with php 7.4 version
+- Apache with php 8.1 version
 >https://hub.docker.com/_/php
 
 >https://httpd.apache.org/

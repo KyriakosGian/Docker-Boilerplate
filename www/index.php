@@ -18,7 +18,7 @@
     <div class="jumbotron">
         <h1 class="display-4">Hello, world!</h1>
         <p class="lead">This is a Simple Boilerplate Web Development Environment with Docker.</p>
-        <p>It uses Apache with php 7.4 version, mysql 8.0 version and phpmyadmin. More on <a target="_blank" href="https://github.com/KyriakosG78/Boilerplate-Docker">github</a></p>
+        <p>It uses Apache with php 8.1 version, mysql 8.0 version and phpmyadmin. More on <a target="_blank" href="https://github.com/KyriakosG78/Boilerplate-Docker">github</a></p>
     </div>
 
     <form action="" method="post">
