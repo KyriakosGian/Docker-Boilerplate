@@ -21,14 +21,6 @@
         <p>It uses Apache with php 8.1 version, mysql 8.0 version and phpmyadmin. More on <a target="_blank" href="https://github.com/KyriakosG78/Boilerplate-Docker">github</a></p>
     </div>
 
-    <form action="" method="post">
-        <div class="form-group">
-            <label for="exampleInputName">Test it ! Add a new name.</label>
-            <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="Name">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
     <?php
     $dbhost = 'db';
     $dbname = 'MYSQLDB';
@@ -37,40 +29,64 @@
 
     try {
         $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
 
-    if (isset($_POST["name"])) {
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO Users (name) VALUES ('" . $_POST["name"] . "')";
-        if ($dbh->query($sql)) {
-            ?>
-            <div class="alert alert-success" role="alert">
-                New Record Inserted Successfully !
+        ?>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="exampleInputName">Test it ! Add a new name.</label>
+                <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="Name">
             </div>
-            <?php
-        } else {
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <?php
+
+        if (isset($_POST["name"]) && !empty($_POST["name"])) {
+
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "INSERT INTO Users (name) VALUES ('" . $_POST["name"] . "')";
+
+            if ($dbh->query($sql)) {
+                ?>
+                <div class="alert alert-success" role="alert">
+                    New Record Inserted Successfully !
+                </div>
+                <?php
+            } else {
+                ?>
+                <div class="alert alert-danger" role="alert">
+                    Data not successfully Inserted.
+                </div>
+                <?php
+            }
+        } else if(isset($_POST["name"]) && empty($_POST["name"])) {
             ?>
             <div class="alert alert-danger" role="alert">
-                Data not successfully Inserted.
+                Please first enter a name.
             </div>
             <?php
         }
+    
+        $sql = 'SELECT * From Users';
+    
+        echo "<ul class='list-group'>";
+        foreach ($dbh->query($sql) as $row) {
+            echo "<li class='list-group-item'>" . $row['id'] . " " . $row['name'] . "</li>";
+        }
+        echo "</ul>";
+
+    } catch (PDOException $e) {
+        echo "<div class='alert alert-warning' role='alert'>";
+        echo "<b>Error message</b> : " . $e->getMessage();
+        echo "</div>";
     }
-
-    $sql = 'SELECT * From Users';
-
-    echo "<ul class='list-group'>";
-    foreach ($dbh->query($sql) as $row) {
-        echo "<li class='list-group-item'>" . $row['id'] . " " . $row['name'] . "</li>";
-    }
-    echo "</ul>";
-
-    echo phpinfo();
     ?>
-
 </div>
+
+<?php
+echo "<div style='background-color:#dddddd'>";
+echo phpinfo();
+echo "</div>";
+?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 </body>
