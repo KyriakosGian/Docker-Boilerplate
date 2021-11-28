@@ -1,24 +1,33 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <title>Hello word</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Hello, word!</title>
+    <style> 
+        a:link { text-decoration: none !important; }
+        a:visited { text-decoration: none !important; }
+        a:hover { text-decoration: none !important; }
+        a:active { text-decoration: none !important; }
+    </style>
 </head>
 <body>
 <div class="container">
 
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand bg-light" href="/">
             <img src="docker.svg" width="30" height="30" class="d-inline-block align-top" alt="" style="float: left;">
             Boilerplate-Docker
         </a>
     </nav>
 
-    <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a Simple Boilerplate Web Development Environment with Docker.</p>
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-4">
+        <h1 class="display-5 fw-bold">Hello, world!</h1>
+        <p class="col-md-12 fs-4">This is a Simple Boilerplate Web Development Environment with Docker.</p>
         <p>It uses Apache with php 8.1 version, mysql 8.0 version and phpmyadmin. More on <a target="_blank" href="https://github.com/KyriakosG78/Boilerplate-Docker">github</a></p>
+      </div>
     </div>
 
     <?php
@@ -36,8 +45,10 @@
                 <label for="exampleInputName">Test it ! Add a new name.</label>
                 <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="Name">
             </div>
+            <br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <hr>
         <?php
 
         if (isset($_POST["name"]) && !empty($_POST["name"])) {
@@ -88,6 +99,6 @@ echo phpinfo();
 echo "</div>";
 ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
