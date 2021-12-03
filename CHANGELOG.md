@@ -1,6 +1,11 @@
 Simple Boilerplate Web Development Environment with Docker
 ==================================
 
+1.0.4 - 2021-12-03
+------------------------
+- Add Nginx Load balancer
+- Fix all links for load balancer
+
 1.0.3 - 2021-11-28
 ------------------------
 - Add a folder for Server service files

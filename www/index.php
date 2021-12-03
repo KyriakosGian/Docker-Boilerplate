@@ -27,7 +27,8 @@
         <h1 class="display-5 fw-bold">Hello, world!</h1>
         <p class="col-md-12 fs-4">This is a Simple Boilerplate Web Development Environment with Docker.</p>
         <p>It uses Apache with php 8.1 version, mysql 8.0 version and phpmyadmin. More on <a target="_blank" href="https://github.com/KyriakosG78/Boilerplate-Docker">github</a></p>
-      </div>
+        <p>Login on <a target="_blank" href="/phpmyadmin/index.php">phpMyAdmin</a>. Fill username: DBUser & pass: DBPassWord</p>
+    </div>
     </div>
 
     <?php
