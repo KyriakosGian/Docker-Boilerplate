@@ -1,5 +1,5 @@
 #Apache server with php.
-FROM php:8.1-rc-apache
+FROM php:8.2-rc-apache
 
 RUN apt-get update
 #RUN apt-get install -y libmcrypt-dev
