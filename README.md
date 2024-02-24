@@ -5,10 +5,10 @@
 1. You must have Docker installed on your pc before you start.
    https://www.docker.com/products/docker-desktop
 1. Copy all files to your project folder.
-    > Download ZIP from https://github.com/KyriakosGian/Boilerplate-Docker
+    > Download ZIP from [https://github.com/KyriakosGian/Docker-Boilerplate](https://github.com/KyriakosGian/Docker-Boilerplate)
                                              
     > OR run git clone in console
-    >>`git clone https://github.com/KyriakosGian/Boilerplate-Docker.git`                                                                                                                                                            
+    >>`git clone https://github.com/KyriakosGian/Docker-Boilerplate.git`                                                                                                                                                            
 
 1. Change settings in {.env} file with your preferences.
 1. Run Docker compose command for docker-compose.yml
